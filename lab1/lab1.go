@@ -1,8 +1,11 @@
+//Выполнил: Климов Александр Александрович
+//Группа: УИБ-311
 package main 
 import (
 	"strconv"
 	"fmt"
 )
+
 func main() {
 	viborka := [100][9] int {
 		{1,1,0,1,0,1,0,1,1},
@@ -112,11 +115,14 @@ func main() {
 	Q:=25 
 	num:=0
 	fmt.Scan(&num)
+	fmt.Println("Выполнил: Климов Александр Александрович\nГруппа: УИБ-311")
+	fmt.Println("Разпознаваемое значение",num)
 	num_slice:= [9]int{}
 	for i:=len(viborka[0])-1;i>=0;i--{
 		num_slice[i]=num%10
 		num/=10
 	}
+	//num_slice1:=[9]int{1,0,0,1,1,0,0,1,0}
 	
 	fmt.Println("Значения Омеги: ",omega)
 	sum:=0
@@ -126,8 +132,9 @@ func main() {
 		for j:=0;j<len(viborka[i]);j++ {
 			sum=sum+(viborka[i][j]*omega[j])
 		}
+
 		if viborka[i] ==num_slice {
-			fmt.Println(viborka[i]," sum:",sum)
+			//fmt.Println(viborka[i]," sum:",sum)
 			if sum<Q {
 				
 				for j:=0;j<9;j++ {
@@ -139,7 +146,7 @@ func main() {
 				
 			}
 		} else {
-			fmt.Println(viborka[i]," sum:",sum)
+			//Sfmt.Println(viborka[i]," sum:",sum)
 			if sum>=Q {
 				
 				for j:=0;j<9;j++ {		
